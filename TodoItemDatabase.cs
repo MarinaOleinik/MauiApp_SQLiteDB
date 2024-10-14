@@ -19,18 +19,19 @@ namespace MauiApp_SQLiteDB
             Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
             var result = await Database.CreateTableAsync<TodoItem>();
         }
+        //tagastab andmed, mis on tabelis
         public async Task<List<TodoItem>> GetItemsAsync()
         {
             await Init();
             return await Database.Table<TodoItem>().ToListAsync();
         }
-
+        //loetelu tagastab
         public async Task<List<TodoItem>> GetItemsNotDoneAsync()
         {
             await Init();
             return await Database.Table<TodoItem>().Where(t => t.Done).ToListAsync();
         }
-
+        //ühe elemendi tagastamine
         public async Task<TodoItem> GetItemAsync(int id)
         {
             await Init();

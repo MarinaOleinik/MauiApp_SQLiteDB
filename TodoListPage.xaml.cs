@@ -1,7 +1,6 @@
 using System.Collections.ObjectModel;
 
 namespace MauiApp_SQLiteDB;
-
 public partial class TodoListPage : ContentPage
 {
     TodoItemDatabase database;

@@ -17,7 +17,6 @@ namespace MauiApp_SQLiteDB
             SQLite.SQLiteOpenFlags.Create |
             // enable multi-threaded database access
             SQLite.SQLiteOpenFlags.SharedCache;
-
         public static string DatabasePath =>
             Path.Combine(FileSystem.AppDataDirectory, DatabaseFilename);
     }
